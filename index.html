@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS course</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/articles.css">
+    <script async type="text/javascript" src="js/helpers.js"></script>
+</head>
+<body>
+    <header>
+        <h1>HTML and CSS course</h1>
+        <p>Inspect the code of this page to learn from its source code.</p>
+    </header>
+    <nav id="main-menu">
+        <h2>Menu</h2>
+        <menu id="main-menu-list">
+            <template id="menu-item">
+                <li><a href=""></a></li>
+            </template>
+        </menu>
+    </nav>
+    <nav id="back-to-menu"><a href="#main-menu">Back to the menu</a></nav>
+    <main>
+        <article id="forms-and-inputs">
+            <h1>Form &amp; inputs</h1>
+            <form action="#forms-and-inputs">
+                <fieldset>
+                    <legend>Fieldsets semantically group fields together, improving usability</legend>
+                    
+                    <div>
+                        <label>
+                            Labels can be associated with the corresponding field by either wrapping it:
+                            <br>
+                            <input type=text name="name" placeholder="this text comes from a placeholder" />
+                        </label>
+                    </div>
+
+                    <div>
+                        <label for="password-field">Or by using the <code>for</code> attribute 
+                            having the same value as the field <code>id</code>: </label>
+                        <br>
+                        <input type=password name="password" id="password-field" required />
+                    </div>
+
+                    <div>
+                        <label>
+                            Some input types include content validation, like email:
+                            <input type=email name="user" placeholder="i.e. your@service.com" required />
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Labels and legends are optional features</legend>
+                    
+                    <div>
+                        <label>
+                            <input type=checkbox name="noticed" value="1" /> Notice how clicking on a properly associated label triggers the field!
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>But sometimes, frustrating bugs happen: </label>
+                        <input type=checkbox name="buggy" value="1" />
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label>Fields can come pre-filled with values: </label>
+                    <input name="pre-filled" value="Nice!" />
+                </div>
+
+                <div>
+                    <label for="understood-field">Of course, fields can also live outside of fieldsets: </label>
+                    <select name="understood" id="understood-field" required>
+                        <option>I still don't understand.</option>
+                        <option value="1">Got it!</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit">Submit buttons action the form</button>
+                    <button type="reset">Reset buttons set the form fields to their initial value</button>
+                </div>
+            </form>
+        </article>
+        <article id="preprocessors">
+            <h1>Preprocessors</h1>
+
+            <p>
+                Writing "vanilla" CSS can be verbose and hard to maintain, 
+                so there are some tools to express style definitions in more coincise ways and 
+                then generate the corresponding CSS files.
+            </p>
+            <p>
+                This page uses <a href="https://sass-lang.com/guide/" target="_blank">Sass</a>, with SCSS files. 
+            </p>
+            <p>
+                More options exist, look for your favourite by searching for "CSS preprocessor" on the Internet.
+            </p>
+            <p>
+                Introducing preprocessors to a project requires some extra set-up steps and 
+                adds processing time on the development device.<br>
+                On the other hand, reduces the amount of code to write manually and also automates some tasks, 
+                like <a href="https://en.wikipedia.org/wiki/Minification_(programming)" target="_blank">minification</a> and 
+                the inclusion of backward compatibility code.
+            </p>
+        </article>
+        <article id="selectors">
+            <h1>Selectors</h1>
+
+            <p>CSS selectors are patterns used to define what part of the web page to apply the styling.</p>
+            <p>
+                The "cascading" caracteristic of CSS defines also a priority system to determine what styling to apply 
+                in case of conflicting definitions. These are based on the code position of the declaration and its specificity.
+            </p>
+            <p>
+                The most specific definition takes priority. In case of equal specificity, definitions that appear later in the code take priority.
+            </p>
+            <p>
+                An exeption to the specificity rule applies when 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" target="_blank">CSS layers</a> are used.
+            </p>
+            <h2>Example</h2>
+            <ol>
+                <li>primo</li>
+                <li>secondo</li>
+                <li>terzo</li>
+                <li>quarto</li>
+                <li>quinto
+                    <ol>
+                        <li>primero</li>
+                        <li>seguno</li>
+                        <li>tercero
+                            <ol>
+                                <li>第一的</li>
+                                <li>第二</li>
+                                <li>第三</li>
+                                <li>第四</li>
+                                <li>第五</li>
+                            </ol>
+                        </li>
+                        <li>cuarto</li>
+                        <li id="my-fav-item">quinto</li>
+                        <li>sexto</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>
+                Mastering the selectors and their priorities is specially important when using or developing CSS frameworks,
+                to understand how to override the default styles imposed by those CSS rules.
+            </p>
+        </article>
+        <article id="flexbox">
+            <h1>Positioning: flexbox</h1>
+
+            <p>
+                Flex positioning organises children elements flowing on one direction (main axis).
+                The main axis may be horizontal (<code>flex-flow: row</code>, by default) or vertical (<code>flex-flow: column</code>).
+            </p>
+            <p>
+                Flex positioning can be applied in nested containers, allowing to create complex layouts.
+            </p>
+
+            <h2>Example</h2>
+            <div class="positioning-block">
+                <div>1</div>
+                <div>
+                    <div>2,1</div>
+                    <div>2,2</div>
+                    <div>2,3</div>
+                </div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </div>
+        </article>
+        <article id="grid">
+            <h1>Positioning: grid</h1>
+
+            <p>
+                Grid positioning organises children elements in two dimensions, by defining a grid of rows and columns, 
+                where children elements can occupy one or more positions covering rectangular areas.
+            </p>
+            <p>
+                Positioning of children elements in a grid can be defined either by directly specifying children spanning or 
+                by defining template areas and assigning children to them. 
+            </p>
+
+            <section class="example" id="grid-spanning-example">
+                <h2>Example with spanning definition</h2>
+                <div class="positioning-block">
+                    <div>1</div>
+                    <div>
+                        <div>2,1</div>
+                        <div>2,2</div>
+                        <div>2,3</div>
+                    </div>
+                    <div>3</div>
+                    <div></div>
+                    <div>5</div>
+                </div>
+            </section>
+
+            <section class="example" id="grid-areas-example">
+                <h2>Example with template areas</h2>
+                <div class="positioning-block">
+                    <div>1</div>
+                    <div>
+                        <div>2,1</div>
+                        <div>2,2</div>
+                        <div>2,3</div>
+                    </div>
+                    <div>3</div>
+                    <div></div>
+                    <div>5</div>
+                </div>
+            </section>
+        </article>
+        <article id="positions">
+            <h1>Positioning: static, relative, absolute, fixed and sticky</h1>
+            <p>
+                Elements can also be re-positioned relative to their normal position,
+                or relative to their ancestor area, or relative to the window viewport.
+            </p>
+
+            <section class="example">
+                <h2>Example</h2>
+                
+                <input type="checkbox" id="enable-positions-example">
+                <label for="enable-positions-example">Enable positioning example</label>
+
+                <div class="positioning-block">
+                    relative positioned container
+                    <div>static position</div>
+                    <div>sticky position</div>
+                    <div>relative position</div>
+                    <div>absolute position</div>
+                    <div>fixed position</div>
+                    <div>
+                        relative positioned container
+                        <div>static position</div>
+                        <div>sticky position</div>
+                        <div>relative position</div>
+                        <div>absolute position</div>
+                        <div>fixed position</div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article id="float">
+            <h1>Positioning: floating and negative margins</h1>
+
+            <p>
+                <img src="./img/flower-power.svg" alt="First colored flower to illustrate the float positioning method." />
+                <img src="./img/flower-power.svg" alt="Second colored flower to illustrate the float positioning method." />
+                Floating elements can get text flowing around them, useful for images or other figures. 
+                The way the text flows around the floating elements is considering the element as a rectangular shape.
+                This shape can be changed through the <code>shape-outside</code> property.
+            </p>
+            <p>
+                <img src="./img/flower-power.svg" alt="Third colored flower to illustrate the float positioning method." />
+                Negative margins are sometimes used to change the position of an element relative to its initial position,
+                moving also its occupied shape. Note that using a <code>position: relative</code> would lead to a different outcome,
+                in which the initial occupied shape is unaffected.
+            </p>
+            <p>
+                In the past, before flexbox and grid layouts were available in CSS, float positioning was heavily used to define web pages layouts.
+                <br>
+                As an example, you can inspect the code in <a href="https://web.archive.org/web/20111018121102/http://www.amazon.com/" target="_blank">Amazon.com back in 2011</a>.
+            </p>
+            <p>
+                Before float positioning was available, web layouts were built using HTML tables
+                (again, you can inspect this snapshot of <a href="https://web.archive.org/web/20060522143937/http://www.amazon.com/exec/obidos/subst/home/home.html/002-9382263-3415808" target="_blank">
+                    Amazon.com back in 2006</a>).
+                <br>
+                Grid and Flexbox positioning methods came to make front end developers lifes easier and more enjoyable :) 
+            </p>
+        </article>
+        <article id="animations">
+            <h1>Animation: transformations, transitions and keyframes</h1>
+
+            <p>Transformation functions allow to translate, rotate, skew and apply those movements even in 3D contexts.</p>
+            <p>
+                For simple animations from an initial state to an altered one, the <code>transition</code> property can be used.
+                For more complex scenarios, the <code>animation</code> property with the <code>@keyframes</code> block 
+                will allow to customize the type of movements and timing.
+            </p>
+
+            <p>
+                For some extreme examples of 3D animations with CSS only, 
+                <a href="https://codepen.io/amit_sheen/pens/public" target="_blank">visit Amit Sheen's creations</a>.
+            </p>
+        </article>
+        <article id="responsive">
+            <h1>Responsive design</h1>
+
+            <p>
+                Device's screen sizes vary broadly and there is no standard set of aspect ratios, 
+                which makes it impossible to use that same layout for everyone.
+            </p>
+            <p>
+                Responsive design is a strategy to ensure that most users will have a good experience browsing a web page,
+                by defining flexible layouts that can adapt to minor differences in screen sizes (i.e. 16:9 vs 4:3),
+                and conditional layouts definitions for mayor differences (i.e. portrait vs landscape viewport).
+            </p>
+            <p>
+                The conditional definition of CSS rules based on device screen features is obtained through
+                the use of media queries, either in HTML <code>&lt;link media="[query]"</code> or
+                in the CSS code itself, through <code>@media [query] { ... }</code>.
+            </p>
+        </article>
+        <article id="performance">
+            <h1>Performance optimization</h1>
+
+            <p>
+                Page loading time and navigation smoothness are important for an enjoyable user experience,
+                and can cause loss of user base if neglected.
+            </p>
+            <p>
+                <img loading="lazy" src="./img/dublin-tree.jpg" alt="A beautiful natural landscape to illustrate the load time of a huge file." />
+                The optimization of loading times at the HTML and CSS level is mainly dealth by reducing the amount
+                of data required to render the page and by splitting the resources inbetween files to allow concurrent downloads. 
+                <br>
+                The Critical Rendering Path (CRP) refers to the minimal resources required
+                to properly render the web page, with special attention to the part of the page initially visible
+                to the user (above the fold).
+            </p>
+            <p>
+                As an example of missed optimization is the photo to the right: even if it uses the lazy loading technique,
+                it is high resolution image displayed at a fraction of its original size.
+                <br>
+                This means that even if the user gets to see a low-res version of it, the browser had to load a file way bigger than needed, 
+                slowing down the overall experience.
+            </p>
+        </article>
+        <article id="more">
+            <h1>Few more things to mention</h1>
+            <ul>
+                <li>Typography</li>
+                <li>Accessibility</li>
+                <li>Testing</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <h1>The End</h1>
+    </footer>
+</body>
+</html>

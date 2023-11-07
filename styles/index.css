@@ -1,0 +1,149 @@
+@import url(../fonts/fonts.css);
+:root {
+  --foreground-color: black;
+  --background-color: white;
+  --anchor-color: black;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+#main-menu-list {
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+}
+#main-menu-list li {
+  margin: 1em 0;
+}
+
+article {
+  min-height: 100vh;
+  margin-top: 2lh;
+  padding: 2em;
+}
+article h1 {
+  font-size: 3em;
+}
+
+header {
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header h1 {
+  font: 5em/0.6em "Agbalumo";
+}
+header p {
+  font: 2em "Bilbo Swash Caps";
+}
+
+h1, h2 {
+  font: 4em "Bilbo Swash Caps";
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+form > fieldset > div, form > :is(fieldset, div) {
+  margin: 1em;
+}
+
+button {
+  margin: 0.5em 0;
+  border-radius: 3px;
+}
+
+a, a:active, a:visited {
+  color: var(--anchor-color);
+}
+
+code {
+  padding: 0 3px;
+  background-color: black;
+  outline: 1px solid black;
+  color: #ebebff;
+}
+
+.positioning-block {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  min-height: 50vh;
+}
+.positioning-block div {
+  background-color: rgba(0, 0, 0, 0.3333333333);
+  border: 1px dotted black;
+  padding: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-color: #eee;
+    --background-color: rgb(28, 28, 28);
+    --anchor-color: white;
+  }
+}
+@media screen and (max-width: 800px) {
+  #back-to-menu {
+    font-size: 0.6em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+    background: var(--background-color);
+  }
+  #main-menu {
+    background: var(--background-color);
+    margin-bottom: -5em;
+    padding-bottom: 5em;
+    position: relative;
+    z-index: 3;
+  }
+}
+/*
+Media query for screens wider than 800px
+*/
+@media screen and (min-width: 800px) {
+  #back-to-menu {
+    display: none;
+  }
+  #main-menu {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    font-size: 0.7em;
+  }
+  #main-menu h2, #main-menu #main-menu-list {
+    text-align: left;
+  }
+  #main-menu li {
+    margin: 0.5em;
+  }
+  main {
+    margin: 0 1em 0 auto;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
