@@ -1,4 +1,15 @@
 @charset "UTF-8";
+article#tables table td, article#tables table th {
+  min-width: 2em;
+  min-height: 2em;
+}
+article#tables .group18 {
+  background-color: darkorange;
+}
+article#tables th[scope=col] {
+  background-color: var(--background-color);
+}
+
 article#selectors #my-fav-item {
   color: greenyellow;
 }
