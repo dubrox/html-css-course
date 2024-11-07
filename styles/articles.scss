@@ -1,5 +1,16 @@
 @charset 'utf-8';
 
+article#tables {
+    table {
+        td, th {
+            min-width: 2em;
+            min-height: 2em;
+        }
+    }
+    .group18 { background-color: darkorange }
+    th[scope=col] { background-color: var(--background-color) }
+}
+
 article#selectors {
     #my-fav-item {
         color: greenyellow;

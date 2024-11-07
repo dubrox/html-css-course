@@ -14,6 +14,11 @@
     <header>
         <h1>HTML and CSS course</h1>
         <p>Inspect the code of this page to learn from its source code.</p>
+        <!-- here you can find things otherwise invisible in the page, like this comment! -->
+        <!--
+            Comments can be over multiple lines as well.
+            Depending on your needs :)
+        -->
     </header>
     <nav id="main-menu">
         <h2>Menu</h2>
@@ -25,6 +30,269 @@
     </nav>
     <nav id="back-to-menu"><a href="#main-menu">Back to the menu</a></nav>
     <main>
+        <article id="entities">
+            <h1>Entities and special characters</h1>
+            <p>
+                For some characters that have special meaning in HTML, there is an alternative way of expressing them to be interpreted always as simple text. 
+            </p>
+            <p>
+                Most common ones:
+                <dl>
+                    <dt>
+                        <code>&amp;</code>
+                    </dt>
+                    <dd>
+                        (ampersand) <code>&amp;amp;</code>
+                    </dd>
+                    <dt>
+                        <code>&lt;</code>
+                    </dt>
+                    <dd>
+                        (less than) <code>&amp;lt;</code>
+                    </dd>
+                    <dt>
+                        <code>&gt;</code>
+                    </dt>
+                    <dd>
+                        (greater than) <code>&amp;gt;</code>
+                    </dd>
+                    <dt>
+                        <code>&nbsp;</code>
+                    </dt>
+                    <dd>
+                        (Non breaking space) <code>&amp;nbsp;</code>
+                    </dd>
+                </dl>
+                For other symbols, using UTF-8 encoding will suffice 😉
+            </p>
+        </article>
+        <article id="tables">
+            <h1>Tables</h1>
+
+            <figure id="periodic-tables">
+                <table>
+                    <caption>Periodic Table of Elements</caption>
+                    <colgroup>
+                        <!-- Group columns for styling -->
+                        <col class="group1">
+                        <col class="group2">
+                        <col class="group3">
+                        <col class="group4">
+                        <col class="group5">
+                        <col class="group6">
+                        <col class="group7">
+                        <col class="group8">
+                        <col class="group9">
+                        <col class="group10">
+                        <col class="group11">
+                        <col class="group12">
+                        <col class="group13">
+                        <col class="group14">
+                        <col class="group15">
+                        <col class="group16">
+                        <col class="group17">
+                        <col class="group18">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                        <th colspan="18">Groups</th>
+                        </tr>
+                        <tr>
+                        <th scope="col">1</th>
+                        <th scope="col">2</th>
+                        <th scope="col">3</th>
+                        <th scope="col">4</th>
+                        <th scope="col">5</th>
+                        <th scope="col">6</th>
+                        <th scope="col">7</th>
+                        <th scope="col">8</th>
+                        <th scope="col">9</th>
+                        <th scope="col">10</th>
+                        <th scope="col">11</th>
+                        <th scope="col">12</th>
+                        <th scope="col">13</th>
+                        <th scope="col">14</th>
+                        <th scope="col">15</th>
+                        <th scope="col">16</th>
+                        <th scope="col">17</th>
+                        <th scope="col">18</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Period 1 -->
+                        <tr>
+                        <td>H</td>
+                        <td colspan="16"></td>
+                        <td>He</td>
+                        </tr>
+                        <!-- Period 2 -->
+                        <tr>
+                        <td>Li</td>
+                        <td>Be</td>
+                        <td colspan="10"></td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>F</td>
+                        <td>Ne</td>
+                        </tr>
+                        <!-- Period 3 -->
+                        <tr>
+                        <td>Na</td>
+                        <td>Mg</td>
+                        <td colspan="10"></td>
+                        <td>Al</td>
+                        <td>Si</td>
+                        <td>P</td>
+                        <td>S</td>
+                        <td>Cl</td>
+                        <td>Ar</td>
+                        </tr>
+                        <!-- Period 4 -->
+                        <tr>
+                        <td>K</td>
+                        <td>Ca</td>
+                        <td>Sc</td>
+                        <td>Ti</td>
+                        <td>V</td>
+                        <td>Cr</td>
+                        <td>Mn</td>
+                        <td>Fe</td>
+                        <td>Co</td>
+                        <td>Ni</td>
+                        <td>Cu</td>
+                        <td>Zn</td>
+                        <td>Ga</td>
+                        <td>Ge</td>
+                        <td>As</td>
+                        <td>Se</td>
+                        <td>Br</td>
+                        <td>Kr</td>
+                        </tr>
+                        <!-- Period 5 -->
+                        <tr>
+                        <td>Rb</td>
+                        <td>Sr</td>
+                        <td>Y</td>
+                        <td>Zr</td>
+                        <td>Nb</td>
+                        <td>Mo</td>
+                        <td>Tc</td>
+                        <td>Ru</td>
+                        <td>Rh</td>
+                        <td>Pd</td>
+                        <td>Ag</td>
+                        <td>Cd</td>
+                        <td>In</td>
+                        <td>Sn</td>
+                        <td>Sb</td>
+                        <td>Te</td>
+                        <td>I</td>
+                        <td>Xe</td>
+                        </tr>
+                        <!-- Period 6 -->
+                        <tr>
+                        <td>Cs</td>
+                        <td>Ba</td>
+                        <td title="lanthanide-placeholder">*</td>
+                        <td>Hf</td>
+                        <td>Ta</td>
+                        <td>W</td>
+                        <td>Re</td>
+                        <td>Os</td>
+                        <td>Ir</td>
+                        <td>Pt</td>
+                        <td>Au</td>
+                        <td>Hg</td>
+                        <td>Tl</td>
+                        <td>Pb</td>
+                        <td>Bi</td>
+                        <td>Po</td>
+                        <td>At</td>
+                        <td>Rn</td>
+                        </tr>
+                        <!-- Period 7 -->
+                        <tr>
+                        <td>Fr</td>
+                        <td>Ra</td>
+                        <td title="actinide-placeholder">**</td>
+                        <td>Rf</td>
+                        <td>Db</td>
+                        <td>Sg</td>
+                        <td>Bh</td>
+                        <td>Hs</td>
+                        <td>Mt</td>
+                        <td>Ds</td>
+                        <td>Rg</td>
+                        <td>Cn</td>
+                        <td>Fl</td>
+                        <td>Mc</td>
+                        <td>Lv</td>
+                        <td>Ts</td>
+                        <td>Og</td>
+                        <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+                <table id="lanthanides-and-actinides">
+                    <caption>Lanthanides and Actinides</caption>
+                    <thead>
+                        <tr>
+                        <th colspan="15">* Lanthanides</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>La</td>
+                        <td>Ce</td>
+                        <td>Pr</td>
+                        <td>Nd</td>
+                        <td>Pm</td>
+                        <td>Sm</td>
+                        <td>Eu</td>
+                        <td>Gd</td>
+                        <td>Tb</td>
+                        <td>Dy</td>
+                        <td>Ho</td>
+                        <td>Er</td>
+                        <td>Tm</td>
+                        <td>Yb</td>
+                        <td>Lu</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                        <th colspan="15">** Actinides</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Ac</td>
+                        <td>Th</td>
+                        <td>Pa</td>
+                        <td>U</td>
+                        <td>Np</td>
+                        <td>Pu</td>
+                        <td>Am</td>
+                        <td>Cm</td>
+                        <td>Bk</td>
+                        <td>Cf</td>
+                        <td>Es</td>
+                        <td>Fm</td>
+                        <td>Md</td>
+                        <td>No</td>
+                        <td>Lr</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <figcaption>
+                    HTML representation of the periodic table of elements.
+                </figcaption>
+            </figure>
+            
+        </article>
         <article id="forms-and-inputs">
             <h1>Form &amp; inputs</h1>
             <form action="#forms-and-inputs">

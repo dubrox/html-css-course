@@ -85,6 +85,18 @@ code {
     color: #ebebff;
 }
 
+figure {
+    border: 1px solid var(--foreground-color);
+    padding: 1em;
+    margin: 1em;
+    overflow: auto;
+}
+
+figcaption {
+    font-style: italic;
+    margin: 1em 0;
+}
+
 .positioning-block {
     color: black;
     background-color: white;
@@ -157,4 +169,12 @@ Media query for screens wider than 800px
     main {
         margin: 0 1em 0 auto;
     }
+}
+
+@media print {
+    main { max-width: 100% }
+    #back-to-menu { display: none }
+    #main-menu { min-height: 100vh }
+    article { min-height: auto }
+    figure { overflow: visible }
 }
